@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/backoffice/static/css/main.7246909e.css",
-    "main.js": "/backoffice/static/js/main.6b91d642.js",
+    "main.js": "/backoffice/static/js/main.fd721a90.js",
     "static/js/453.81401b53.chunk.js": "/backoffice/static/js/453.81401b53.chunk.js",
     "static/media/Pretendard-Black.woff": "/backoffice/static/media/Pretendard-Black.fe80bd8c7ce9b3af972f.woff",
     "static/media/Pretendard-ExtraBold.woff": "/backoffice/static/media/Pretendard-ExtraBold.82ea4400a5eea299b40c.woff",
@@ -23,11 +23,11 @@
     "static/media/Pretendard-Thin.woff2": "/backoffice/static/media/Pretendard-Thin.41861ab4e67767c4c6ed.woff2",
     "index.html": "/backoffice/index.html",
     "main.7246909e.css.map": "/backoffice/static/css/main.7246909e.css.map",
-    "main.6b91d642.js.map": "/backoffice/static/js/main.6b91d642.js.map",
+    "main.fd721a90.js.map": "/backoffice/static/js/main.fd721a90.js.map",
     "453.81401b53.chunk.js.map": "/backoffice/static/js/453.81401b53.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7246909e.css",
-    "static/js/main.6b91d642.js"
+    "static/js/main.fd721a90.js"
   ]
 }
