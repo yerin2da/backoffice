@@ -1,0 +1,208 @@
+
+
+.input_con.img_input {}
+.input_con.img_input label input[type="file"] {display: none;}
+.input_con.img_input label div.upload_img {width: 120px; height: 80px; cursor: pointer; overflow: hidden;}
+.input_con.img_input label div.upload_img img {width: 100%;}
+
+
+#header .nav_con ul li {position: relative; padding: 10px 0; border-bottom: 1px dotted #E0E0E0;}
+/* #header .nav_con ul li a .img_con img {width: 60%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+#header .nav_con ul li a p {position: relative; font-size: 0.8rem; line-height: 1.2rem; font-weight: 700; margin: 0 0 0 5px;}
+#header .nav_con ul li.on a p {color: #fff;}
+.link_con {display: flex; justify-content: space-evenly; align-items: center; width: 100%; margin: 10px 0 0 0;}
+.link_con a {font-size: 0.7rem; line-height: 1.1rem;} */ */
+
+
+/* .container {margin: 0 0 0 250px;} */
+.container .sections {width: 100%; 
+  /* height: 100vh;  */
+  background: #EBEFF2;}
+.container .sections .width_con {
+  position: relative; 
+  width:100%;
+  /* max-width:1270px;
+  padding: 40px; */
+}
+.container .sections .width_con > h3 {pointer-events: none;}
+.container .sections .width_con:before {position: absolute; bottom: 0; left: 20px; content: ''; width: calc(100% - 20px); height: 15px; background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);}
+.container .sections.basic .width_con > h3{}
+/* .container .sections .width_con ul.tabs {position: relative; display: flex; justify-content: space-between; margin: 20px 0 0 0;} */
+.container .sections .width_con ul.tabs:before {position: absolute; bottom: -15px; left: 0; content: ''; width: 100%; height: 15px; background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);}
+.container .sections .width_con ul.tabs li {background: #A5AFB6; padding: 10px; border-radius: 4px 4px 0px 0px; cursor: pointer;}
+.container .sections .width_con ul.tabs li.on {background: #fff; box-shadow: none;}
+.container .sections .width_con ul.tabs li h5 {font-size: 0.8rem; line-height: 1.2rem; color: #fff;}
+.container .sections .width_con ul.tabs li.on h5 {color: #000;}
+.container .sections .width_con ul.tabs li .status {}
+.container .sections .width_con ul.tabs li .status span {font-size: 0.6rem; line-height: 1rem; font-weight: 700;}
+.container .sections .width_con ul.tabs li .status span.on {font-size: 0.65rem; line-height: 1.1rem; color: #06F;}
+.container .sections .width_con ul.tabs li .status span.off {}
+
+
+.container .sections.main {}
+.container .sections.main .width_con {}
+.container .sections.main .width_con:before {display: none;}
+.container .sections.main .width_con .row {display: flex; align-items: center;}
+.container .sections.main .width_con .row1 {}
+.container .sections.main .width_con .row1 .conts {width: calc(20% - 10px); margin: 0 10px; padding: 15px 20px; background: #fff; border-radius: 4px; box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.20);}
+.container .sections.main .width_con .row1 .cont1 {}
+.container .sections.main .width_con .row1 .cont1 h5 {font-size: 0.8rem; line-height: 1.2rem; font-weight: 700; pointer-events: none;}
+.container .sections.main .width_con .row1 .cont1 .count {display: flex; margin: 10px 0 0 0;}
+.container .sections.main .width_con .row1 .cont1 .count > div {position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 50%;}
+.container .sections.main .width_con .row1 .cont1 .count > div span.txt {font-size: 0.8rem; line-height: 1.2rem; color: #777; pointer-events: none;}
+.container .sections.main .width_con .row1 .cont1 .count > div span.nums {font-size: 2.5rem; line-height: 2.9rem; font-weight: 700; pointer-events: none;}
+.container .sections.main .width_con .row1 .cont1 .count .today {}
+.container .sections.main .width_con .row1 .cont1 .count .today::before {position: absolute; top: 0; right: 0; content: ''; width: 1px; height: 100%; background: #E0E0E0;}
+.container .sections.main .width_con .row1 .cont1 .count .today .txt {}
+.container .sections.main .width_con .row1 .cont1 .count .today .nums {color: #0066FF;}
+.container .sections.main .width_con .row1 .cont1 .count .yesterday {}
+.container .sections.main .width_con .row1 .cont1 .count .yesterday .txt {}
+.container .sections.main .width_con .row1 .cont1 .count .yesterday .nums {color: #999999;}
+
+.container .sections.main .width_con .profile_con {
+    display: flex; 
+    gap: 10px;
+    /* margin: 30px 0 0 0; */
+}
+.container .sections.main .width_con .profile_con .col {width:100%; padding: 15px 20px; border-radius: 4px; background: #fff; box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.20);}
+/* .container .sections.main .width_con .profile_con .col1 {margin: 0 20px 0 0;} */
+.container .sections.main .width_con .profile_con .col1 #profileSetting {}
+.container .sections.main .width_con .profile_con .col1 #profileSetting h5 {font-size: 0.8rem; line-height: 1.2rem; font-weight: 700; pointer-events: none;}
+.container .sections.main .width_con .profile_con .col1 #profileSetting p.col_desc {margin: 10px 0 0 0; font-size: 0.6rem; line-height: 1rem; color: #777; pointer-events: none;}
+.container .sections.main .width_con .profile_con .col1 #profileSetting .input_con {margin: 10px 0 0 0;}
+.container .sections.main .width_con .profile_con .col1 #profileSetting .input_con input[type='file'] {display: none;}
+.container .sections.main .width_con .profile_con .col1 #profileSetting .input_con .upload_img {max-width: 200px; max-height: 200px; aspect-ratio: 1; overflow: hidden; cursor: pointer;}
+.container .sections.main .width_con .profile_con .col1 #profileSetting .input_con .upload_img img {width: 100%;}
+.container .sections.main .width_con .profile_con .col1 #profileSetting .input_con .del_slide {text-align: center; margin: 10px 0 0 0;}
+.container .sections.main .width_con .profile_con .col1 #profileSetting .input_con .del_slide span {cursor: pointer;}
+.container .sections.main .width_con .profile_con .col1 #profileSetting .input_con input[type='text'] { height: 40px; margin: 10px 0 0 0; padding: 0 0 0 10px; background: #EBEFF2; border-radius: 4px; font-size: 0.8rem; line-height: 1.2rem; color: #000;}
+.container .sections.main .width_con .profile_con .col1 #profileSetting .input_con input[type='text']::placeholder {color: #8A8A8A;}
+.container .sections.main .width_con .profile_con .col1 .btns.save {margin: 10px 0 0 0; text-align: center;}
+.container .sections.main .width_con .profile_con .col1 .btns.save span {display: inline-block; padding: 12px 15px; font-size: 0.8rem; line-height: 1.2rem; font-weight: 700; color: #fff; border-radius: 4px; background: #06F; cursor: pointer;}
+/* .container .sections.main .width_con .profile_con .col2 {width: 990px;} */
+.container .sections.main .width_con .profile_con .col2 .row {flex-direction: column; align-items: flex-start;}
+.container .sections.main .width_con .profile_con .col2 .row > * {pointer-events: none;}
+.container .sections.main .width_con .profile_con .col2 .row2 {margin: 30px 0 0 0;}
+.container .sections.main .width_con .profile_con .col2 .row h5 {font-size: 0.8rem; line-height: 1.2rem; font-weight: 700;}
+.container .sections.main .width_con .profile_con .col2 .row p {margin: 10px 0 0 0; font-size: 0.6rem; line-height: 1rem; color: #777;}
+.container .sections.main .width_con .profile_con .col2 .row ul {display: flex; justify-content: space-between; flex-wrap: wrap; width: 100%; margin: 20px 0 0 0;}
+.container .sections.main .width_con .profile_con .col2 .row ul li {display: flex; justify-content: space-between; align-items: center; width: calc(50% - 10px); padding: 10px 0; border-bottom: 1px solid #999;}
+.container .sections.main .width_con .profile_con .col2 .row ul li h6 {font-size: 0.7rem; line-height: 1.1rem; font-weight: 700;}
+.container .sections.main .width_con .profile_con .col2 .row ul li span {font-size: 0.8rem; line-height: 1.2rem; color: #555;}
+.container .sections.main .width_con .profile_con .col2 .row ul li span.type_val {text-align: right;}
+
+
+
+.container .sections.basic .width_con .form_con {
+  /* max-height: 750px;  */
+  padding: 15px; background: #fff; border-radius: 0px 0px 4px 4px; box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.20); overflow: auto;}
+.container .sections.basic .width_con form#basicSetting {position: relative;}
+.container .sections.basic .width_con .row {margin-top: 30px; padding-top: 20px; border-top: 1px solid #E0E0E0;}
+.container .sections.basic .width_con .row .title_con {display: flex;}
+.container .sections.basic .width_con .row .title_con h5 {font-size: 0.8rem; line-height: 1.2rem; font-weight: 700;}
+.container .sections.basic .width_con .row .title_con span.esenstial {margin: 0 0 0 5px; font-size: 0.8rem; line-height: 1rem; color: #f00;}
+.container .sections.basic .width_con .row p.row_desc {margin: 5px 0 0 0; font-size: 0.6rem; line-height: 1rem; color: #777;}
+
+/* 매물관리 페이지 설정 */
+.setting-container {display: flex; gap: 16px; width: 100%; padding: 20px; box-sizing: border-box;}
+.setting-card {flex: 1; min-width: 200px; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; display: flex; flex-direction: column; overflow: hidden;}
+.card-header { background-color: #f8fafc; padding: 12px; border-bottom: 1px solid #e2e8f0;}
+.card-header h5 { margin: 0; font-size: 14px; font-weight: 700; color: #334155;}
+.card-body {padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+/* .setting-item {display: flex; justify-content: space-between; align-items: center;} */
+.item-label {margin: 0; font-size: 13px; color: #475569;}
+/* .check_con label {cursor: pointer; display: inline-block;} */
+.input_check { display: none;}
+
+
+.container .sections.basic .width_con .row1 {display: flex; justify-content: space-between; align-items: center;}
+.container .sections.basic .width_con .row1 .btn_con {display: flex;}
+.container .sections.basic .width_con .row1 .btns {width: 120px; margin: 0 0 0 10px; padding: 10px 0; text-align: center; border-radius: 4px; box-shadow: 2px 2px 4px rgba(0,0,0,.2);}
+.container .sections.basic .width_con .row1 .btns.apply {background: #06F; cursor: pointer;}
+.container .sections.basic .width_con .row1 .btns.apply span {font-size: 0.8rem; line-height: 1.2rem; font-weight: 700; color: #fff;}
+.container .sections.basic .width_con .row1 .btns.temporary {background: #fff; border: 1px solid #06F; cursor: pointer;}
+.container .sections.basic .width_con .row1 .btns.temporary span {font-size: 0.8rem; line-height: 1.2rem; font-weight: 700; color: #06F; background: none;}
+.container .sections.basic .width_con .row1 .btns.exit {background: #A5AFB6;}
+.container .sections.basic .width_con .row1 .btns.exit span {color: #fff;}
+
+.container .sections.board .width_con:before {display: none;}
+.container .sections.board .width_con .board_con {
+    /* max-height: 750px; */
+     padding: 15px; background: #fff; border-radius: 0px 0px 4px 4px; box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.20); overflow: auto;}
+/* .container .sections.board .width_con ul.tabs {justify-content:left; gap:5px;} */
+/* .container .sections.board .width_con ul.tabs li {width: calc(20% - 5px);} */
+.container .sections.board .width_con ul.tabs:before {display: none;}
+.container .sections.board .width_con ul.tabs li .status {display: flex; flex-direction: column; align-items: flex-end;}
+.container .sections.board .width_con ul.tabs li .status p {font-size: 0.5rem; line-height: 0.9rem; color: #F5F5F5;}
+.container .sections.board .width_con ul.tabs li.on .status p {color: #777;}
+.container .sections.board .width_con ul.tabs li .status span {font-size: 1rem; line-height: 1.4rem; color: #E0E0E0;}
+.container .sections.board .width_con ul.tabs li.on .status span {color: #212121;}
+.container .sections.board .width_con ul.tabs li .status .new {color: #fff;}
+.container .sections.board .width_con ul.tabs li.on .status .new {color: #06F;}
+.container .sections.board .width_con ul.tabs li .status .whole {}
+
+
+
+/* @media screen and (max-width:1520px){
+  #header {left: -260px;}
+  #header.unfold {left: 0;}
+  #header .btn_open {display: block;}
+  #header.unfold .btn_open {right: -20px;}
+  .container {margin: 0;}
+  .container .sections {width: 100vw; overflow: auto;}
+  .container .sections .width_con {padding: 10px 0 0 10px;}
+  .container .sections .width_con ul.tabs {margin: 10px 0 0 0;}
+  .container .sections.basic .width_con .form_con {max-height: 680px;}
+
+  
+}
+@media screen and (max-width:1200px){
+  
+}
+@media screen and (max-width:960px){
+  
+}
+@media screen and (max-width:350px){
+  
+} */
+
+
+
+
+
+
+/* ===========================
+   Container
+=========================== */
+
+
+
+.opt {  
+    margin: 8px 0 12px;
+    color: var(--text-faint);  font-size: 0.7rem;  font-weight: 300; 
+}
+
+
+
+
+/* 입력 */
+.note_section input,
+.note_section select,
+.note_section textarea {  font-family:inherit;  font-size:0.875rem;  color:var(--text);  background:var(--surface-sunken);  border:1px solid var(--border);  border-radius:7px;  padding:10px 12px;  width:100%;}
+
+.note_section input:focus,
+.note_section select:focus,
+.note_section textarea:focus {  outline:none;  border-color:var(--accent);  background:var(--surface);}
+
+/* placeholder */
+.note_section input::placeholder {  color:var(--text-faint);}
+
+@media (max-width: 840px) {
+    /* 프로필관리 */
+    .container .sections.main .width_con .profile_con, 
+    .container .sections.main .width_con .profile_con .col2 .row ul {
+      flex-direction: column;
+    }
+  }
+
+  

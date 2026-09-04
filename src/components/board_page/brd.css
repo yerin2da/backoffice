@@ -1,0 +1,184 @@
+.brd {position: relative; 
+  /* height: 700px; */
+}
+.brd .fn_bar {display: flex; justify-content: space-between;}
+.brd .fn_bar .search_con {display: flex; margin: 20px 0 0 0; opacity: 0; pointer-events: none;}
+.brd .fn_bar .search_con.show {opacity: 1; pointer-events: all; gap:5px;}
+.brd .fn_bar .search_con select {width: 100px; height: 40px; border-radius: 4px; background: #EBEFF2; padding: 0 0 0 10px; outline: none;}
+.brd .fn_bar .search_con select option {}
+.brd .search_con input {width: 200px; height: 40px; margin: 0 5px; border-radius: 4px; background: #EBEFF2; padding: 0 0 0 10px; font-size: 0.7rem; line-height: 1.1rem; color: #000;}
+.brd .fn_bar .search_con input::placeholder {color: #999;}
+.brd .fn_bar .search_con .btn_search, .btn_search, .brd .fn_bar .search_con .btn_reset {display: flex; justify-content: center; align-items: center; padding:0 5px; min-width: 50px; height: 40px; border-radius: 4px; background: #A5AFB6; cursor: pointer;}
+.brd .fn_bar .search_con .btn_search span, .btn_search span, .brd .fn_bar .search_con .btn_reset span {font-size: 0.7rem; line-height: 1.1rem; font-weight: 700; color: #fff;}
+.brd .fn_bar .btn_new {display: flex; justify-content: center; align-items: center; border-radius: 4px; background: #06F; cursor: pointer;}
+.brd .fn_bar .btn_new span {font-size: 0.8rem; line-height: 1.2rem; font-weight: 700; color: #fff;}
+.brd .fn_bar .btn_new span a {padding: 15px 30px; font-size: inherit; line-height: inherit; font-weight: inherit; color: inherit;}
+
+.brd .borad_rows {margin: 20px 0 0 0;}
+.brd .borad_rows .rows {}
+.brd .rows ul {position: relative; display: flex; border-top: 1px solid #E0E0E0;}
+.brd .rows ul:after {position: absolute; top: 0; left: 0; content: ''; width: 100%; height: 100%; background: rgba(0, 0, 0, .8); display: none;}
+.brd .rows ul.deleted:after {display: block;}
+.brd .rows ul li {
+  box-sizing: border-box; /* 패딩이 너비에 영향을 주지 않도록 설정 */
+  padding: 15px 10px;     /* 좌우 여백을 주어 글자가 경계선에 딱 붙지 않게 조절 */
+  text-align: center; 
+  font-size: 0.8rem; 
+  line-height: 1.2rem; 
+  color: #212121; 
+  border-right: 1px solid #E0E0E0;
+  overflow: hidden;       /* 영역 밖으로 나가는 요소 숨김 */
+}
+.brd .rows ul li.board_no {width: 7%}
+.brd .rows ul li.board_type {width: 6%;}
+.brd .rows ul li.board_type span,
+.brd .rows ul li span.badge {display: inline-block; padding: 4px; border-radius: 4px; color: #fff; font-size: 0.7rem; line-height: 1.1rem; font-weight: 700;}
+.brd .rows ul li.board_type .notice {background: #212121;}
+.brd .rows ul li.board_type .event {background: #FF51A4;}
+.brd .rows ul li.board_type .charge {background: #7B9DB5;}
+.brd .rows ul li.board_type .review {background: #2DB400;}
+.brd .rows ul li.board_type .vod {background: #AF41CB;}
+.brd .rows ul li.score {width: 10%;}
+.brd .rows ul li.board_title {
+  width: 25%;
+  white-space: nowrap;      /* 줄바꿈 금지 */
+  text-overflow: ellipsis;  /* 초과된 텍스트를 ...으로 표시 */
+  overflow: hidden;         /* 영역 밖 텍스트 숨김 */
+}
+.brd .rows ul li.board_title a {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.brd .rows ul li.board_writer {width: 15%;}
+.brd .rows ul li.board_date {width: 15%;}
+.brd .rows ul li.board_hit {width: 7%;}
+.brd .rows ul li.board_etc {display: flex; justify-content: center; align-items: center; width: 12%; padding: 10px 0; border: none;}
+.brd .rows ul li.board_etc .btns {padding: 5px; border-radius: 4px; background: #999; cursor: pointer;}
+.brd .rows ul li.board_etc .btns span {font-size: 0.7rem; line-height: 1.1rem; color: #fff; font-weight: 700;}
+.brd .rows ul li.board_etc .btns span a {font-size: inherit; line-height: inherit; font-weight: inherit; color: inherit;}
+.brd .rows ul li.board_etc .btn_edit {margin: 0 10px 0 0;}
+.brd .rows ul li.board_etc .btn_edit span {}
+.brd .rows ul li.board_etc .btn_del {}
+.brd .rows ul li.board_etc .btn_del span {}
+.brd .row0 ul {border: none;}
+.brd .row0 ul li {border: none; font-size: 0.7rem; line-height: 1.1rem; font-weight: 700;}
+
+
+.sections.write {}
+.sections.write .width_con .form_con {margin: 30px 0 0 0; padding: 15px; border-radius: 4px; background: #fff; box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.20);}
+.sections.view .width_con .view_con {margin: 30px 0 0 0; padding: 15px; border-radius: 4px; background: #fff; box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.20);}
+
+.sections.write form {}
+.sections.write form .row {}
+.sections.write form .row1 {}
+.sections.write form .row1 .select_type {width: 200px; height: 40px; padding: 0 0 0 10px; background: #EBEFF2; border-radius: 4px;}
+.sections.write form .row1 .select_type option {}
+.board_type {display: inline-block; padding: 5px 10px; border-radius: 4px;}
+.board_type.notice {background: #212121;}
+.board_type.event {background: #FF51A4;}
+.board_type.charge {background: #7B9DB5;}
+.board_type.review {background: #2DB400;}
+.board_type.vod {background: #AF41CB;}
+.board_type span {font-size: 0.8rem; line-height: 1.2rem; font-weight: 400; color: #fff;}
+.sections.write form .row2 {}
+.sections.write form .row2 .input_title_con {margin: 30px 0 0 0; padding: 0 0 10px 0; border-bottom: 1px solid #A5AFB6;}
+.sections.write form .row2 .input_title_con input {width: 100%; padding: 0 0 0 10px; font-size: 1.5rem; line-height: 1.9rem;}
+.sections.write form .row2 .score_con {display: flex; margin: 20px 0 0 0; padding: 0 0 10px 0; border-bottom: 1px solid #A5AFB6}
+.sections.write form .row2 .score_con h5 {font-size: 0.8rem; line-height: 1.2rem; font-weight: 700; margin: 0 20px 0 0;}
+.sections.write form .row2 .score_con .check_score {display: flex; align-items: center; margin: 0 10px 0 0;}
+.sections.write form .row2 .score_con .check_score input {margin: 0 5px 0 0;}
+.sections.write form .row2 .score_con .check_score img {}
+.sections.write form .row2 .score_con .check_score span {margin: 0 0 0 5px; font-size: 0.7rem; line-height: 1.1rem;}
+.sections.write form .row3 {margin: 10px 0 0 0; padding: 10px 0 20px 0; border-bottom: 1px solid #A5AFB6;}
+.sections.write form .row3 .ql-container {height: 300px;}
+.sections.write form .row4 {margin: 10px 0 0 0; padding: 10px 0 20px 0; border-bottom: 1px solid #A5AFB6;}
+/* .sections.write form .row4 p {font-size: 0.6rem; line-height: 1rem; color: #777;} */
+.sections.write .section_box{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sections.write form .upload_vod {
+  display: fles;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+/* .sections.write form .row4 .upload_vod h5 {margin: 0 20px 0 0; white-space: nowrap;}
+.sections.write form .row4 .upload_vod .origin_file {display: flex; align-items: center;}
+.sections.write form .row4 .upload_vod .origin_file h6 {}
+.sections.write form .row4 .upload_vod .origin_file span {}
+.sections.write form .row4 .upload_vod .input_vod {width: 300px; border-radius: 4px; background: #EBEFF2; font-size: 0.6rem; line-height: 1.2rem; color: #666D72;}
+.sections.write form .row4 .upload_vod .input_vod::file-selector-button {width: 100px; height: 40px; border-radius: 4px; background: #A5AFB6; font-size: 0.8rem; line-height: 1.2rem; font-weight: 700; color: #fff; outline: none; border: none;}
+.sections.write form .row4 .upload_vod span {margin: 0 0 0 10px; cursor: pointer;} */
+.sections.write form .row4 .upload_vod .input_url {width: 100%; height: 40px; padding: 0 0 0 10px; border-radius: 4px; background: #EBEFF2; font-size: 0.6rem; line-height: 1.2rem; color: #666D72;}
+.sections.write form .row4 .upload_vod .input_url::placeholder {font-size: 0.6rem; line-height: 1.2rem; color: #A5AFB6;}
+.sections.write form .row5 {margin: 30px 0 0 0;}
+.sections.write form .row5 .btn_con {display: flex;}
+.sections.write form .row5 .btns {width: 120px; margin: 0 0 0 10px; padding: 10px 0; text-align: center; border-radius: 4px; box-shadow: 2px 2px 4px rgba(0,0,0,.2); cursor: pointer;}
+.sections.write form .row5 .btns.apply {background: #06F;}
+.sections.write form .row5 .btns.apply span {font-size: 0.8rem; line-height: 1.2rem; font-weight: 700; color: #fff;}
+.sections.write form .row5 .btns.temporary {background: #fff; border: 1px solid #06F;}
+.sections.write form .row5 .btns.temporary span {font-size: 0.8rem; line-height: 1.2rem; font-weight: 700; color: #06F; background: none;}
+.sections.write form .row5 .btns.exit {background: #A5AFB6;}
+.sections.write form .row5 .btns.exit span {color: #fff;}
+.sections.write form .row5 .btns.exit span a {font-size: 0.8rem; line-height: 1.2rem; font-weight: 700; display: inline-block; width: 100%; height: 100%;; color: inherit;}
+.sections.write .row5 {margin: 30px 0 0 0;}
+.sections.write .row5 .btn_con {display: flex;}
+.sections.write .row5 .btns {width: 120px; margin: 0 0 0 10px; padding: 10px 0; text-align: center; border-radius: 4px; box-shadow: 2px 2px 4px rgba(0,0,0,.2); cursor: pointer;}
+.sections.write .row5 .btns.apply {background: #06F;}
+.sections.write .row5 .btns.apply span {font-size: 0.8rem; line-height: 1.2rem; font-weight: 700; color: #fff;}
+.sections.write .row5 .btns.temporary {background: #fff; border: 1px solid #06F;}
+.sections.write .row5 .btns.temporary span {font-size: 0.8rem; line-height: 1.2rem; font-weight: 700; color: #06F; background: none;}
+.sections.write .row5 .btns.exit {background: #A5AFB6;}
+.sections.write .row5 .btns.exit span {color: #fff;}
+.sections.write .row5 .btns.exit span a {font-size: 0.8rem; line-height: 1.2rem; font-weight: 700; display: inline-block; width: 100%; height: 100%;; color: inherit;}
+
+
+.sections.view {}
+.sections.view .row {}
+.sections.view .row1 {}
+.sections.view .row1 .board_type {display: inline-block; padding: 5px 10px; border-radius: 4px;}
+.sections.view .row1 .board_type.notice {background: #212121;}
+.sections.view .row1 .board_type.event {background: #FF51A4;}
+.sections.view .row1 .board_type.charge {background: #7B9DB5;}
+.sections.view .row1 .board_type.review {background: #2DB400;}
+.sections.view .row1 .board_type.vod {background: #AF41CB;}
+.sections.view .row1 .board_type span {font-size: 0.8rem; line-height: 1.2rem; font-weight: 400; color: #fff;}
+.sections.view .row2 {margin: 20px 0 0 0; 
+  border-bottom: 2px solid #06F;
+  border-radius: unset;
+}
+.sections.view .row2 .title_con {padding: 6px 20px;}
+.sections.view .row2 .title_con h3 {font-size: 1.5rem; line-height: 1.9rem; font-weight: 400;}
+.sections.view .row2 .score_con {display: flex; align-items: center; padding: 10px 0; border-top: 1px solid #A5AFB6;}
+.sections.view .row2 .score_con h5 {}
+.sections.view .row2 .score_con > div {margin: 0 10px;}
+.sections.view .row2 .score_con span {font-size: 0.7rem; line-height: 1.1rem;}
+.sections.view .row3 {padding: 10px 0; border-bottom: 1px solid #A5AFB6;}
+.sections.view .row3 .view_info {display: flex; justify-content: space-between; align-items: flex-end;}
+.sections.view .row3 .view_info .col {}
+.sections.view .row3 .view_info .col span {position: relative; font-size: 0.7rem; line-height: 1.1rem;}
+.sections.view .row3 .view_info .col span.writer {padding: 0 10px 0 0; margin: 0 10px 0 0;}
+.sections.view .row3 .view_info .col span.writer::before {position: absolute; top: 0; right: 0; content: ''; width: 1px; height: 100%; background: #A5AFB6;}
+.sections.view .row3 .view_info .col span.date {}
+.sections.view .row3 .view_info .col span.hits {}
+.sections.view .row4 {min-height: 400px; max-height: 600px; margin: 10px 0; border-bottom: 1px solid #A5AFB6; overflow: auto;}
+.sections.view .row4 p.caution {font-size: 0.8rem; line-height: 1.2rem; color: #999;}
+.sections.view .row4 video {width: 80%;}
+.sections.view .row4 .iframe_con {position: relative; width: 50%; height: 0; padding-bottom: 28%;}
+.sections.view .row4 .iframe_con iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+.sections.view .view_con .row5 {margin: 20px 0 0 0;}
+.sections.view .view_con .row5 .btn_con {display: flex;}
+.sections.view .view_con .row5 .btns {width: 120px; margin: 0 0 0 10px; padding: 10px 0; text-align: center; border-radius: 4px; box-shadow: 2px 2px 4px rgba(0,0,0,.2); cursor: pointer;}
+.sections.view .view_con .row5 .btns span {font-size: 0.8rem; line-height: 1.2rem; font-weight: 700;}
+.sections.view .view_con .row5 .btns span a {display: inline-block; width: 100%; height: 100%;; color: inherit;}
+.sections.view .view_con .row5 .btns.exit {background: #fff; border: 1px solid #06F;}
+.sections.view .view_con .row5 .btns.exit span {color: #06F;}
+.sections.view .view_con .row5 .btns.apply {background: #06F;}
+.sections.view .view_con .row5 .btns.apply span {color: #fff;}
+.sections.view .view_con .row5 .btns.del {background: #A5AFB6;}
+.sections.view .view_con .row5 .btns.del span { color: #fff;}

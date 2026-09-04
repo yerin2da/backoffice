@@ -1,0 +1,285 @@
+:root{
+    --st-consult_request: #06B6D4;
+    --st-consulting: #006eff;
+    --st-proposed: #e08a1c;
+    --st-contracted: #1bab5e;
+    --st-lost: #8b93a3;
+}
+  .page { max-width: 1280px; margin: 0 auto; padding: 28px 24px 70px; }
+
+  h1.page-title { font-size: 22px; font-weight: 800; margin: 0 0 18px; letter-spacing: -0.01em; }
+
+  /* ---- 상단 상태 탭 ---- */
+  .status-tabs {
+    display: grid;
+    grid-template-columns: 1fr repeat(4, 1fr);
+    gap: 4px;
+    margin-bottom: 4px;
+  }
+  .status-tab {
+    border-radius: 10px 10px 0 0;
+    padding: 16px 18px;
+    cursor: pointer;
+    background: var(--tab-inactive);
+    color: #ffffff;
+  }
+  .status-tab.active { background: var(--surface); color: var(--text); }
+  .status-tab-label { font-size: 14.5px; font-weight: 700; display: block; margin-bottom: 6px; }
+  .status-tab-caption { font-size: 11px; opacity: 0.85; display: block; }
+  .status-tab-count { font-size: 22px; font-weight: 800; display: block; margin-top: 2px; }
+  .status-tab:not(.active) .status-tab-count { font-size: 12px; font-weight: 600; opacity: 0.85; }
+
+
+  .tag-tenant { background: #4b5563; }
+  .tag-landlord { background: #6b5bd6; }
+
+  .tag-consult_request  { background: var(--st-consult_request); }
+  .tag-consulting  { background: var(--st-consulting); }
+  .tag-proposed    { background: var(--st-proposed); }
+  .tag-contracted  { background: var(--st-contracted); }
+  .tag-lost         { background: var(--st-lost); }
+
+  .memo-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .memo-count:hover { background: var(--surface-sunken); color: var(--accent); }
+  .memo-count svg { width: 12px; height: 12px; color: var(--text-muted);}
+  .memo-count:hover svg {color: var(--accent); }
+
+  .pagination { display: flex; justify-content: center; gap: 6px; padding: 20px; }
+  .page-btn {
+    width: 30px; height: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .page-btn.active { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+
+  /* 노트 등록/수정은 note_register.html, 상세페이지 전체 정보는 note_detail.html 참고.
+     이 팝업은 리스트에서 메모만 빠르게 보고/남기기 위한 용도. */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(15, 17, 22, 0.42);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    padding: 24px;
+  }
+  .modal-overlay.open { display: flex; }
+
+  .memo-modal {
+    width: min(480px, 100%);
+    max-height: min(600px, 100%);
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    animation: popin 0.15s ease;
+  }
+  @keyframes popin { from { transform: scale(0.97); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+  .memo-modal-head {
+    padding: 18px 20px 14px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+  }
+  .memo-modal-head h2 { font-size: 16px; font-weight: 800; margin: 0 0 3px; }
+  .memo-modal-head .phone { font-size: 12.5px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+  .memo-modal-head .head-actions { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+  .memo-modal-head .detail-link { 
+    background: #e8f3ff;
+    border: none;
+    border-radius: 8px;
+    padding: 4px 10px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 12px; color: #3182f6; 
+    text-decoration: none; font-weight: 700; white-space: nowrap; }
+  .memo-modal-close {
+    border: none; background: var(--surface-sunken); color: var(--text-muted);
+    width: 28px; height: 36px; border-radius: 8px; cursor: pointer; font-size: 14px; flex: 0 0 auto;
+  }
+
+  .memo-modal-body { padding: 16px 20px; flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; min-height: 80px; }
+  .memo-modal .memo-item { display: flex; gap: 10px; }
+  .memo-modal .memo-avatar {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 800; flex: 0 0 auto;
+  }
+  .memo-modal .memo-bubble { width:100%; background: var(--surface-sunken); border: 1px solid var(--border); border-radius: 10px; padding: 9px 12px; font-size: 13px; line-height: 1.55; }
+  .memo-modal .memo-byline { display: flex; gap: 8px; align-items: baseline; margin-bottom: 3px; }
+  .memo-modal .memo-writer { font-size: 12.5px; font-weight: 700; }
+  .memo-modal .memo-time { font-size: 10.5px; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+  .memo-modal .memo-empty { font-size: 13px; color: var(--text-faint); margin: 0; }
+
+  .memo-modal-form { display: flex; gap: 8px; border-top: 1px solid var(--border); padding: 14px 20px; }
+  .memo-modal-form textarea {
+    flex: 1; font-family: inherit; font-size: 13px; color: var(--text);
+    background: var(--surface-sunken); border: 1px solid var(--border); border-radius: 8px;
+    padding: 9px 11px; resize: none; min-height: 40px; max-height: 100px; line-height: 1.5;
+  }
+  .memo-modal-form textarea:focus { outline: none; border-color: var(--accent); background: var(--surface); }
+  .memo-modal-form button { flex: 0 0 auto; align-self: flex-end; }
+
+
+  /* =========================
+   Note Detail
+========================= */
+
+/* 상세 상단 영역 */
+.detail-head {  padding: 22px 24px;  border-bottom: 1px solid var(--border);  display: flex;  align-items: flex-start;  justify-content: space-between;  gap: 16px;}
+.detail-head h1 {  font-size: 20px;  font-weight: 800;  margin: 0 0 6px;  letter-spacing: -0.02em;}
+.detail-head .phone {  font-size: 13.5px;  color: var(--text-muted);  font-variant-numeric: tabular-nums;}
+
+.badges {  display: flex;  gap: 6px;  margin-top: 10px;}
+
+
+/* 상태 pill */
+
+.tag-consulting {  background: var(--st-consulting);}
+.tag-proposed {  background: var(--st-proposed);}
+.tag-contracted {  background: var(--st-contracted);}
+.tag-lost {  background: var(--st-lost);}
+
+
+/* 메모 영역 */
+.memo-wrap h2 {  font-size: 14.5px;  font-weight: 800;  margin: 0 0 16px;}
+
+/* 메모 리스트 */
+.memo-thread {  display: flex;  flex-direction: column;  gap: 14px;  margin-bottom: 18px;}
+.memo-item {  display: flex;  gap: 10px;}
+.memo-avatar {  width: 30px;  height: 30px;  border-radius: 50%;  background: var(--accent-soft);  color: var(--accent);  display: flex;  align-items: center;  justify-content: center;  font-size: 11.5px;  font-weight: 800;  flex: 0 0 auto;}
+.memo-body {  flex: 1;}
+.memo-bubble {  background: #f5f9ff;  border: 1px solid var(--border);  border-radius: 10px;  padding: 10px 13px;  font-size: 13.5px;  line-height: 1.6;}
+.memo-byline {  display: flex;  gap: 8px;  align-items: baseline;  margin-bottom: 4px;}
+.memo-writer {  font-size: 13px;  font-weight: 700;}
+.memo-time {  font-size: 11px;  color: var(--text-faint);}
+.memo-empty {  font-size: 13px;  color: var(--text-faint);  padding: 12px 0;}
+
+/* 메모 입력 */
+.memo-form {  display: flex;  gap: 8px;  border-top: 1px solid var(--border);  padding-top: 16px;}
+.memo-form textarea {  flex: 1;  font-family: inherit;  font-size: 13.5px;  color: var(--text);  background: #fff;  border: 1px solid var(--border);  border-radius: 8px;  padding: 10px 12px;  resize: none;  min-height: 44px;  max-height: 140px;  line-height: 1.5;}
+.memo-form textarea:focus {  outline: none;  border-color: var(--accent);  background: var(--surface);}
+.memo-form button {  flex: 0 0 auto;  align-self: flex-end;}
+
+/* =========================
+   Memo Edit Mode
+========================= */
+
+/* 수정 버튼 */
+.memo-byline button {  margin-left: auto;  border: 0;  background: transparent;  color: var(--text-muted);  font-size: 12px;  font-weight: 600;  cursor: pointer;  padding: 4px 8px;  border-radius: 5px;}
+.memo-byline button:hover {  background: var(--surface-sunken);  color: #000;}
+.memo-byline button svg{  font-size: 11.5px;  color: var(--text-muted);}
+.memo-byline button:hover svg{  color: #000;}
+
+/* 수정 입력 영역 */
+.memo-bubble form {  margin-top: 12px;}
+
+/* 수정 textarea */
+.memo-bubble form textarea {  width: 100%;  min-height: 100px;  padding: 12px 14px;  border-radius: 8px;  border: 1px solid var(--border);  background: var(--surface);  color: var(--text);  font-size: 14px;  line-height: 1.5;  resize: vertical;}
+.memo-bubble form textarea:focus {  outline: none;  border-color: var(--accent);}
+
+/* 저장 취소 영역 */
+.memo-edit-actions {  display: flex;  justify-content: flex-end;  gap: 6px;  margin-top: 10px;}
+
+/* 수정 버튼 공통 */
+.memo-edit-actions button {  height: 32px;  padding: 0 14px;  border-radius: 6px;  border: 1px solid var(--border);  font-size: 12px;  font-weight: 700;  cursor: pointer;}
+
+/* 저장 */
+.memo-edit-actions button[type="submit"] {  background: var(--accent);  border-color: var(--accent);  color: #fff;}
+
+/* 취소 */
+.memo-edit-actions button[type="button"] {  background: var(--surface);  color: var(--text-muted);}
+.memo-edit-actions button[type="button"]:hover {  background: var(--surface-sunken);}
+
+/* =========================
+   Note Form
+========================= */
+
+/* 폼 컨테이너 */
+.note_section .form_con {  background: var(--surface);  border-radius: 10px;  box-shadow: var(--shadow);  overflow: hidden;}
+
+/* 버튼 영역 */
+.note_section .row5 {  margin-top:16px;  background:var(--surface);  border-radius:10px;  box-shadow:var(--shadow);}
+
+/* .note_section .btn_con {  display:flex;  justify-content:flex-end;  gap:8px;  padding:18px 24px;} */
+
+/* 공통 버튼 */
+.note_section .btns {  font-family:inherit;  font-size:13px;  font-weight:700;  border-radius:7px;  padding:10px 16px;  cursor:pointer;  border:none;}
+
+/* 저장 */
+.note_section .btns.apply {  background:var(--accent);  color:#fff;}
+
+/* 취소 */
+.note_section .btns.exit {  background:var(--btn-action-bg);  color:var(--btn-action-fg);}
+.note_section .btns.exit a {  color:inherit;  text-decoration:none;}
+
+/* datetime */
+.note_section input[type="datetime-local"] { width: 50%; color:var(--text);}
+
+/* 배정/매물 연결용 */
+.property-pick {  display:flex;  gap:8px;}
+.property-pick button {  flex:0 0 auto;}
+
+/* 선택된 매물 */
+.picked-property {  display:flex;  justify-content:space-between;  align-items:center;  margin-top:8px;  padding:8px 10px;  background:var(--accent-soft);  border-radius:7px;  font-size:12.5px;  color:var(--accent);  font-weight:700;}
+/* .esenstial {  color: var(--danger) !important;  font-size: 12px;  margin-left: 4px;  font-weight: 700;}
+.opt {  color: var(--text-faint);  font-size: 12px;  font-weight: 400;  margin-left: 5px;} */
+.help {  margin-top: 6px;  font-size: 11.5px;  color: var(--text-faint);}
+
+.property_pick {  display: flex;  gap: 8px;}
+.property_pick input {  flex: 1;}
+.search_btn {  flex: 0 0 auto;}
+
+.picked_property {  display: flex;  align-items: center;  justify-content: space-between;  margin-top: 8px;  padding: 8px 10px;  background: var(--accent-soft);  color: var(--accent);  border-radius: 7px;font-size: 12.5px;  font-weight: 700;}
+.picked_property button {  border: none;  background: transparent;  color: inherit;  cursor: pointer;  font-size: 13px;  font-weight: 700;  opacity: 0.7;}
+.picked_property button:hover {  opacity: 1;}
+
+/* 버튼 공통 */
+.note_section .row5 {  margin-top: 16px;  background: var(--surface);  border-radius: 10px;  box-shadow: var(--shadow);}
+.note_section .right {  display: flex;  gap: 8px;  margin-left: auto;}
+.note_section .btn {  display: inline-flex;  align-items: center;  justify-content: center;  font-family: inherit;  font-size: 13px;  font-weight: 700;border-radius: 7px;  padding: 10px 16px;text-decoration: none;  cursor: pointer;  border: none;  white-space: nowrap;}
+
+
+/* Top Hero Header */
+.panel-hero {  display: flex;  justify-content: space-between;  align-items: flex-start;
+    /* padding-bottom: 24px;  border-bottom: 1px solid #f2f4f6;  margin-bottom: 24px; */
+  }
+.badge-group {  display: flex;  gap: 6px;  margin-bottom: 8px;}
+.user-info-title {  font-size: 22px;  font-weight: 700;  color: #191f28;  display: flex;  align-items: baseline;  gap: 8px;}
+.user-sub-text {  font-size: 14px;  font-weight: 600;  color: #191f28;}
+.hero-actions {  display: flex;  gap: 8px;}
+.panel-hero .sub{    font-size: 14px;    color: #9a9a9a;}
+/* Content Title */
+.section-title {  font-size: 16px;  font-weight: 700;  color: #191f28;  margin-bottom: 16px;}
+
+/* ========================= Sub Action Items Hover ========================= */
+
+/* 검색 / 매물 선택 버튼 */
+.search_btn, .property-pick button {  transition: background-color 0.15s ease, transform 0.1s ease;}
+.search_btn:hover, .property-pick button:hover {  background: color-mix(in srgb, var(--btn-action-bg) 80%, var(--text) 20%);}
+
+/* 모달 / 상세보기 링크 & 닫기 버튼 */
+.memo-modal-head .detail-link {  transition: background-color 0.15s ease, opacity 0.15s ease;}
+.memo-modal-head .detail-link:hover {  background: color-mix(in srgb, #e8f3ff 80%, #3182f6 20%);}
+.memo-modal-close {  transition: background-color 0.15s ease, color 0.15s ease;}
+.memo-modal-close:hover {  background: color-mix(in srgb, var(--surface-sunken) 70%, var(--text-muted) 30%);  color: var(--text);}
